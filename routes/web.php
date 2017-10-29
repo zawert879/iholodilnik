@@ -17,4 +17,14 @@ Route::get('/', function () {
 Route::get('/add','productController@add');
 Route::post('add','productController@store')->name('productStore');
 
+Route::get('/user','UserController@profile');
+Route::post('/user/update_photo','UserController@photo')->name('userPhoto');
+
+Route::post('/card','productController@card')->name('productCard');
+
 Route::get('/basket','productController@basket');
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

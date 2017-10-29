@@ -58,12 +58,15 @@
 
 </header>
 <main class="main">
+
+    <form action="{{route('productCard')}}" method="post">
+
     @foreach($products as $product)
 
         <figure class="D_">
-
+            <input type="hidden" name="{{$product->product_id}}" value="0">
             <section class="D">
-                <img class="Images_blocks" src="{{ $product->photo }}">
+                <img class="Images_blocks" src="uploads/products/{{$product->photo }}">
             </section>
 
             <section class="D_recipe">
@@ -75,6 +78,9 @@
 
 
     @endforeach
+        {!! csrf_field() !!}
+        <input type="submit" value="asdsad">
+    </form>
 
     <section id="list">
 
