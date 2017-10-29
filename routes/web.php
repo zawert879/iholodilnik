@@ -14,13 +14,18 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/add','productController@add');
-Route::post('add','productController@store')->name('productStore');
+Route::get('/addProduct','productController@add');
+Route::post('/addProduct','productController@store')->name('productStore');
 
-Route::get('/user','UserController@profile');
-Route::post('/user/update_photo','UserController@photo')->name('userPhoto');
+Route::get('/addRecipe','productController@addRecipe');
+Route::post('/addRecipe','productController@storeRecipe')->name('recipeStore');
 
-Route::post('/card','productController@card')->name('productCard');
+
+Route::post('/user/update_photo','UserController@photo')->name('userPhoto');//обновление фото профиля
+
+Route::get('/fridge','frigeController@fridge');
+
+Route::post('/card','productController@card')->name('productCard');//отправка из корзины в холодильник
 
 Route::get('/basket','productController@basket');
 

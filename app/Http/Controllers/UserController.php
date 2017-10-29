@@ -10,10 +10,6 @@ use Image;
 
 class UserController extends Controller
 {
-
-    public function profile(){
-        return view('profile');
-    }
     public function photo(Request $request){
 
         if ($request->hasFile('photo')){

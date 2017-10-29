@@ -1,20 +1,21 @@
-@extends('layouts.app')
+@extends('layouts.app2')
 
 @section('content')
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Dashboard</div>
+                <div class="panel-heading">Профиль</div>
 
                 <div class="panel-body">
-                    @if (session('status'))
-                        <div class="alert alert-success">
-                            {{ session('status') }}
-                        </div>
-                    @endif
+                    <h1>{{Auth::user()->name}}</h1>
+                    <img src="/uploads/avatars/{{Auth::user()->photo}}" width="150" alt="">
 
-                    You are logged in!
+                    <form enctype="multipart/form-data" action="{{Route('userPhoto')}}" method="post">
+                        <input type="file" name="photo">
+                        <input type="submit" value="Отправить">
+                        {!! csrf_field() !!}
+                    </form>
                 </div>
             </div>
         </div>
