@@ -4,10 +4,9 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Новый продукт</div>
-
+                <div class="panel-heading">Новая категория</div>
                 <div class="panel-body">
-                    <form class="form-horizontal" method="POST" action="{{ route('productStore') }}">
+                    <form class="form-horizontal" method="POST" action="{{ route('categoryProdStore') }}">
                         {{ csrf_field() }}
 
                         <div class="form-group">
@@ -25,19 +24,6 @@
                                 <input  type="text" class="form-control" name="photo" required autofocus>
                             </div>
                         </div>
-
-
-                        <div class="form-group ">
-                            <label  class="col-md-4 control-label">Категория</label>
-                            <div class="col-md-6">
-                                <select size="" class="form-control" name="id_categoty_prod" id="id_categoty_prod">
-                                    @foreach($category_prods as $category)
-                                        <option selected value="{{$category->id}}"><p>{{$category->name }}</p></option>
-                                    @endforeach
-                                </select>
-                            </div>
-                        </div>
-
                         <div class="form-group">
                             <div class="col-md-8 col-md-offset-4">
                                 <button type="button" class="btn btn-success">

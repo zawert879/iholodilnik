@@ -48,9 +48,9 @@ class productController extends Controller
         return redirect('/fridge');
     }
 
-    public function addRecipe(){
+    public function addCategoryProd(){
 
-        return  view('addRecipe');
+        return  view('addCategoryProd');
 
     }
 

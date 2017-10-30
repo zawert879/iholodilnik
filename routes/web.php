@@ -14,11 +14,18 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/addProduct','productController@add');
-Route::post('/addProduct','productController@store')->name('productStore');
+Route::get('/add/Product','productController@add');
+Route::post('/add/Product','productController@store')->name('productStore');
 
-Route::get('/addRecipe','productController@addRecipe');
-Route::post('/addRecipe','productController@storeRecipe')->name('recipeStore');
+Route::get('/add/categoryprod','productController@addCategoryProd');
+Route::post('/add/categoryprod','productController@storeRecipe')->name('categoryProdStore');
+
+Route::get('/recipe','RecipeController@recipe');
+Route::get('/add/recipe','RecipeController@add');
+Route::post('/add/recipe','RecipeController@store')->name('ricipeStore');
+
+
+
 
 
 Route::post('/user/update_photo','UserController@photo')->name('userPhoto');//обновление фото профиля

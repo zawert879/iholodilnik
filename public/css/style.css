@@ -93,8 +93,8 @@ a,a:link{
 	padding-left: 30px;
 	background: #ff6c5c;
 	float: left; 
-	font-size: 
-	border-bottom: 1px solid #ebf31b;
+
+	border-bottom : 1px solid #ebf31b;
 }
 
 
@@ -620,4 +620,7 @@ text-transform: uppercase;
 .Newblock_menu{
 	width: 100px;
 	background: #988345;
+}
+.visible_form{
+	visibility: hidden;
 }

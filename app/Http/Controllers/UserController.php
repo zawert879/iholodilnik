@@ -15,7 +15,7 @@ class UserController extends Controller
         if ($request->hasFile('photo')){
         $photo = $request->file('photo');
             $filename =time().'.'.$photo->getClientOriginalExtension();
-            Image::make($photo)->resize(300,300)->save( public_path('/uploads/avatars/').$filename );
+            Image::make($photo)->save( public_path('/uploads/avatars/').$filename );
             Auth::user()->photo = $filename;
             Auth::user()->save();
             return redirect('/');
