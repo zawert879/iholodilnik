@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\category_prod;
 use App\fridge;
 use App\product;
+use Image;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -15,7 +16,6 @@ class productController extends Controller
 {
     public function add(){
         $category = category_prod::all();
-
         return  view('addProduct')->with(['category_prods'=>$category]);
     }
     public function basket(){
@@ -26,11 +26,20 @@ class productController extends Controller
 
     public function store(Request $request){
 
+
+        if ($request->hasFile('photo')){
+            $photo = $request->file('photo');
+            $filename =time().'.'.$photo->getClientOriginalExtension();
+            Image::make($photo)->save( public_path('/uploads/products/').$filename );
+        }else{
+            $filename = null;
+        }
         $data = $request->all();
         $products = new product;
         $products->fill($data);
-        $products->save();
+        $products->photo = $filename;
 
+        $products->save();
         return redirect('/basket');
     }
     public function card(Request $request)

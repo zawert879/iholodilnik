@@ -26,7 +26,7 @@ Route::post('/add/recipe','RecipeController@store')->name('ricipeStore');
 
 
 
-
+Route::get('recipe/{id}','RecipeController@page');
 
 Route::post('/user/update_photo','UserController@photo')->name('userPhoto');//обновление фото профиля
 

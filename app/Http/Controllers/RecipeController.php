@@ -2,25 +2,59 @@
 
 namespace App\Http\Controllers;
 
+use Image;
 use App\category_prod;
 use App\category_recipe;
 use App\composition;
+use App\product;
 use App\recipe;
 use Illuminate\Http\Request;
 
 class RecipeController extends Controller
 {
     public function recipe(){
-       return view('recipe');
+        $recipe = recipe::all();
+       return view('recipe')->with(['recipe'=>$recipe]);
     }
 
     public function add(){
-        $category_recipes = category_recipe::all();
-
-        return view('addRecipe')->with(['category_recipes'=>$category_recipes]);
+        $category_recipes = category_recipe::select(['id','name'])->get();
+        $category_prods = category_prod::select(['id','name'])->get();
+        $products=product::select(['id','name'])->get();
+        return view('addRecipe')->with(['category_recipes'=>$category_recipes,'category_prods'=>$category_prods,'products'=>$products]);
     }
     public function store(Request $request){
-//        $composition
+        $recipe = new recipe;
+        $recipe->name = $request->name;
+        if ($request->hasFile('photo')){
+            $photo = $request->file('photo');
+            $filename =time().'.'.$photo->getClientOriginalExtension();
+            Image::make($photo)->save( public_path('/uploads/recipes/').$filename );
+            $recipe->photo = $filename;}else{
+            $recipe->photo = null;
+        }
+        $lastrecipe = recipe::count();
+        $recipe->category = $request->category;
+        $recipe->description =$request->description;
+        $recipe->text = $request->text;
+        $recipe->save();
+        for($i = 1;$i<=$request->amount;$i++){
+            $composition = new composition;
+        if($lastrecipe == 0){
+            $composition->id_recipe = 1;
+        }else{
+            $composition->id_recipe = $lastrecipe + 1;
+        }
+            $composition->id_product = $request->get('item'.$i);
+            $composition->amount = $request->get('itemAmount'.$i);
+            $composition->save();
+        }
+        return redirect('/recipe');
+    }
 
+    public function page($id){
+
+
+        return;
     }
 }

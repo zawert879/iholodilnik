@@ -7,7 +7,7 @@
                 <div class="panel-heading">Новый продукт</div>
 
                 <div class="panel-body">
-                    <form class="form-horizontal" method="POST" action="{{ route('productStore') }}">
+                    <form enctype="multipart/form-data" class="form-horizontal" method="POST" action="{{ route('productStore') }}">
                         {{ csrf_field() }}
 
                         <div class="form-group">
@@ -22,7 +22,7 @@
                             <label  class="col-md-4 control-label">Ссылка на фото</label>
 
                             <div class="col-md-6">
-                                <input  type="text" class="form-control" name="photo" required autofocus>
+                                <input  type="file" class="form-control" name="photo" >
                             </div>
                         </div>
 
@@ -40,7 +40,7 @@
 
                         <div class="form-group">
                             <div class="col-md-8 col-md-offset-4">
-                                <button type="button" class="btn btn-success">
+                                <button type="submit"  class="btn btn-success">
                                     Сохранить
                                 </button>
                             </div>

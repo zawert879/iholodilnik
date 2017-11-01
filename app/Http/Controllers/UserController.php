@@ -21,8 +21,5 @@ class UserController extends Controller
             return redirect('/');
         }
         else{return redirect('/user');}
-
-
-
     }
 }

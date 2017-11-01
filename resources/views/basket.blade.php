@@ -37,7 +37,7 @@
     @endforeach
         {!! csrf_field() !!}
         @auth()
-        <input type="submit" value="asdsad">
+        <input class="btn btn-success" type="submit" value="В холодильник">
             @endauth
     </form>
     @endsection
