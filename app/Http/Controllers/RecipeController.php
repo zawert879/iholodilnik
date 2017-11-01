@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\DB;
 use Image;
 use App\category_prod;
 use App\category_recipe;
@@ -33,10 +34,12 @@ class RecipeController extends Controller
             $recipe->photo = $filename;}else{
             $recipe->photo = null;
         }
+
         $lastrecipe = recipe::count();
         $recipe->category = $request->category;
         $recipe->description =$request->description;
         $recipe->text = $request->text;
+
         $recipe->save();
         for($i = 1;$i<=$request->amount;$i++){
             $composition = new composition;
@@ -53,8 +56,8 @@ class RecipeController extends Controller
     }
 
     public function page($id){
-
-
-        return;
+        $recipe = recipe::where('id',$id)->first();
+        $products = DB::select("select products.name FROM products,compositions,recipes WHERE products.id = compositions.Id_product AND compositions.id_recipe=".$id." AND recipes.id = compositions.id_recipe");
+        return view('page')->with(['recipe'=>$recipe,'products'=>$products]);
     }
 }
