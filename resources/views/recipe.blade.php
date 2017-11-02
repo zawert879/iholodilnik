@@ -7,6 +7,7 @@
                 </section>
             </a>
             <span class="add_">Добавить рецепт</span>
+
         </section>
     </section>
 @endsection
@@ -15,7 +16,7 @@
     <section class="container">
         <section class="leftmenu">
             @foreach($recipe as $item)
-                <a href="/recipe/{{ $item->id }}" role="button" >
+                <a href="/recipe/{{ $item->id }}" role="button" id="{{"recipe".$item->id}}" >
                 <figure class="block">
 
                 <section class="blockpi">

@@ -49,6 +49,7 @@ class productController extends Controller
     }
     public function card(Request $request)
     {
+        dd($request);
         $qq = product::select(['id'])->get();
         foreach ($qq as $item) {
             $buff = $item->id;
@@ -56,7 +57,7 @@ class productController extends Controller
                 $fridge = new fridge;
                 $fridge->owner = Auth::user()->id;
                 $fridge->product= $buff;
-                $fridge-> save();
+//                $fridge-> save();
             }
         }
         return redirect('/fridge');

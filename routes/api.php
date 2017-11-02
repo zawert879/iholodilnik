@@ -17,3 +17,12 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::get('/','ApiController@index');
+
+Route::post('register', 'Auth\RegisterController@register');
+Route::post('login', 'Auth\LoginController@login');
+
+//Route::get('/api/users/{id}',);
+//Route::get('/api/users/',);
+Route::get('recipes/','ApiController@recipes');
+Route::get('recipe/{id}','ApiController@recipe');
