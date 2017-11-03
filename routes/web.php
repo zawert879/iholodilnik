@@ -16,11 +16,11 @@ Route::get('/', function () {
 });
 
 
-Route::get('/add/Product','productController@add');
-Route::post('/add/Product','productController@store')->name('productStore');
+Route::get('/add/Product','ProductController@add');
+Route::post('/add/Product','ProductController@store')->name('productStore');
 
-Route::get('/add/categoryprod','productController@addCategoryProd');
-Route::post('/add/categoryprod','productController@storeRecipe')->name('categoryProdStore');
+Route::get('/add/categoryprod','ProductController@addCategoryProd');
+Route::post('/add/categoryprod','ProductController@storeRecipe')->name('categoryProdStore');
 
 Route::get('/recipe','RecipeController@recipe');
 Route::get('/add/recipe','RecipeController@add');
@@ -32,11 +32,11 @@ Route::get('recipe/{id}','RecipeController@page');
 
 Route::post('/user/update_photo','UserController@photo')->name('userPhoto');//обновление фото профиля
 
-Route::get('/fridge','frigeController@fridge');
+Route::get('/fridge','FrigeController@fridge');
 
-Route::post('/card','productController@card')->name('productCard');//отправка из корзины в холодильник
+Route::post('/card','ProductController@card')->name('productCard');//отправка из корзины в холодильник
 
-Route::get('/basket','productController@basket');
+Route::get('/basket','ProductController@basket');
 
 
 Auth::routes();
