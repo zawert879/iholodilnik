@@ -4,11 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\DB;
 use Image;
-use App\category_prod;
-use App\category_recipe;
-use App\composition;
-use App\product;
-use App\recipe;
+use App\Category_prod;
+use App\Category_recipe;
+use App\Composition;
+use App\Product;
+use App\Recipe;
 use Illuminate\Http\Request;
 
 class RecipeController extends Controller

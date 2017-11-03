@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\recipe;
+use App\Recipe;
 use Illuminate\Http\Request;
 
 class ApiController extends Controller

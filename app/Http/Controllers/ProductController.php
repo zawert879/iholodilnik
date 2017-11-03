@@ -1,9 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\category_prod;
-use App\fridge;
-use App\product;
+use App\Category_prod;
+use App\Fridge;
+use App\Product;
 use Image;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -12,7 +12,7 @@ use function MongoDB\BSON\toJSON;
 use Psy\Util\Json;
 
 
-class productController extends Controller
+class ProductController extends Controller
 {
     public function add(){
         $category = category_prod::all();
