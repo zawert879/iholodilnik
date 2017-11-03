@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class composition extends Model
+class Category_recipe extends Model
 {
     //
 }
