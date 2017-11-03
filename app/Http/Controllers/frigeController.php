@@ -13,7 +13,7 @@ class frigeController extends Controller
         if (Auth::check()){
             $authUser = Auth::user()->id;
 
-            $fridge = DB::select('SELECT products.name as product_name,category_prods.name AS category_name,products.photo FROM fridges,products,category_prods WHERE fridges.product=products.id AND fridges.owner='.$authUser.' AND products.id_categoty_prod=category_prods.id');
+            $fridge = DB::select('SELECT products.name as product_name,category_prods.name AS category_name,products.photo FROM fridges,products,category_prods WHERE fridges.product=products.id AND fridges.owner='.$authUser.' AND products.id_category_prod=category_prods.id');
 //        dump($fridge);
             return view('fridge')->with(['fridge'=>$fridge]);
         }

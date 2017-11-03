@@ -24,7 +24,7 @@ class productController extends Controller
 //            ->select('products.id', 'products.name', 'products.photo', 'category_prods.name')
 //            ->get();
 //        dd($products);
-        $products = DB::select("SELECT products.id AS product_id,products.name,products.photo,category_prods.name AS category_name FROM products,category_prods WHERE products.id_categoty_prod=category_prods.id");
+        $products = DB::select("SELECT products.id AS product_id,products.name,products.photo,category_prods.name AS category_name FROM products,category_prods WHERE products.id_category_prod=category_prods.id");
 //        dump($products);
         return view(    'basket')->with(['products'=>$products]);
     }
