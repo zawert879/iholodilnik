@@ -15,7 +15,7 @@ use Psy\Util\Json;
 class ProductController extends Controller
 {
     public function add(){
-        $category = category_prod::all();
+        $category = Category_prod::all();
         return  view('addProduct')->with(['category_prods'=>$category]);
     }
     public function basket(){
@@ -40,7 +40,7 @@ class ProductController extends Controller
             $filename = null;
         }
         $data = $request->all();
-        $products = new product;
+        $products = new Product;
         $products->fill($data);
         $products->photo = $filename;
 
@@ -50,11 +50,11 @@ class ProductController extends Controller
     public function card(Request $request)
     {
         dd($request);
-        $qq = product::select(['id'])->get();
+        $qq = Product::select(['id'])->get();
         foreach ($qq as $item) {
             $buff = $item->id;
             if ($request->get("$buff")){
-                $fridge = new fridge;
+                $fridge = new Fridge;
                 $fridge->owner = Auth::user()->id;
                 $fridge->product= $buff;
 //                $fridge-> save();
@@ -71,7 +71,7 @@ class ProductController extends Controller
 
     public function storeRecipe(Request $request){
         $data = $request->all();
-        $products = new category_prod;
+        $products = new Category_prod;
         $products->fill($data);
         $products->save();
         return redirect('/basket');

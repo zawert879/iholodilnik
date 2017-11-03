@@ -14,18 +14,18 @@ use Illuminate\Http\Request;
 class RecipeController extends Controller
 {
     public function recipe(){
-        $recipe = recipe::all();
+        $recipe = Recipe::all();
        return view('recipe')->with(['recipe'=>$recipe]);
     }
 
     public function add(){
-        $category_recipes = category_recipe::select(['id','name'])->get();
-        $category_prods = category_prod::select(['id','name'])->get();
-        $products=product::select(['id','name'])->get();
+        $category_recipes = Category_recipe::select(['id','name'])->get();
+        $category_prods = Category_prod::select(['id','name'])->get();
+        $products=Product::select(['id','name'])->get();
         return view('addRecipe')->with(['category_recipes'=>$category_recipes,'category_prods'=>$category_prods,'products'=>$products]);
     }
     public function store(Request $request){
-        $recipe = new recipe;
+        $recipe = new Recipe;
         $recipe->name = $request->name;
         if ($request->hasFile('photo')){
             $photo = $request->file('photo');
@@ -35,14 +35,14 @@ class RecipeController extends Controller
             $recipe->photo = null;
         }
 
-        $lastrecipe = recipe::count();
+        $lastrecipe = Recipe::count();
         $recipe->category = $request->category;
         $recipe->description =$request->description;
         $recipe->text = $request->text;
 
         $recipe->save();
         for($i = 1;$i<=$request->amount;$i++){
-            $composition = new composition;
+            $composition = new Composition;
         if($lastrecipe == 0){
             $composition->id_recipe = 1;
         }else{
@@ -56,7 +56,7 @@ class RecipeController extends Controller
     }
 
     public function page($id){
-        $recipe = recipe::where('id',$id)->first();
+        $recipe = Recipe::where('id',$id)->first();
         $products = DB::select("select products.name FROM products,compositions,recipes WHERE products.id = compositions.Id_product AND compositions.id_recipe=".$id." AND recipes.id = compositions.id_recipe");
         return view('page')->with(['recipe'=>$recipe,'products'=>$products]);
     }

@@ -12,11 +12,11 @@ class ApiController extends Controller
     }
 
     public function recipes(){
-        return recipe::all();
+        return Recipe::all();
     }
 
     public function recipe($id){
-        return recipe::find($id);
+        return Recipe::find($id);
     }
 
 }
