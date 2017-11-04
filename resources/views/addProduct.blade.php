@@ -30,7 +30,7 @@
                         <div class="form-group ">
                             <label  class="col-md-4 control-label">Категория</label>
                             <div class="col-md-6">
-                                <select size="" class="form-control" name="id_categoty_prod" id="id_categoty_prod">
+                                <select size="" class="form-control" name="id_category_prod" id="id_category_prod">
                                     @foreach($category_prods as $category)
                                         <option selected value="{{$category->id}}"><p>{{$category->name }}</p></option>
                                     @endforeach
