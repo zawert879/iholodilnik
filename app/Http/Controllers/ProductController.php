@@ -31,7 +31,7 @@ class ProductController extends Controller
 
     public function store(Request $request){
 
-
+        dump($request);
         if ($request->hasFile('photo')){
             $photo = $request->file('photo');
             $filename =time().'.'.$photo->getClientOriginalExtension();
@@ -44,7 +44,7 @@ class ProductController extends Controller
         $products->fill($data);
         $products->photo = $filename;
         dump($products);
-        $products->save();
+//        $products->save();
 //        return redirect('/basket');
     }
     public function card(Request $request)
