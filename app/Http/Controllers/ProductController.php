@@ -45,7 +45,7 @@ class ProductController extends Controller
         $products->photo = $filename;
         dump($products);
         $products->save();
-        return redirect('/basket');
+//        return redirect('/basket');
     }
     public function card(Request $request)
     {
