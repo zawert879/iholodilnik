@@ -25,7 +25,7 @@ class ProductController extends Controller
 //            ->get();
 //        dd($products);
         $products = DB::select("SELECT products.id AS product_id,products.name,products.photo,category_prods.name AS category_name FROM products,category_prods WHERE products.id_category_prod=category_prods.id");
-//        dump($products);
+        dump($products);
         return view(    'basket')->with(['products'=>$products]);
     }
 
@@ -43,7 +43,7 @@ class ProductController extends Controller
         $products = new Product;
         $products->fill($data);
         $products->photo = $filename;
-
+        dump($products);
         $products->save();
         return redirect('/basket');
     }
