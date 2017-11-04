@@ -27,7 +27,7 @@ Route::get('/add/recipe','RecipeController@add');
 Route::post('/add/recipe','RecipeController@store')->name('ricipeStore');
 
 Route::get('/add/categoryRecipe','RecipeController@addCategoryRecipe');
-Route::get('/add/categoryRecipe','RecipeController@storeCategoryRecipe')->name('categoryRecipeStore');
+Route::post('/add/categoryRecipe','RecipeController@storeCategoryRecipe')->name('categoryRecipeStore');
 
 
 Route::get('recipe/{id}','RecipeController@page');
