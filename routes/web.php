@@ -20,12 +20,14 @@ Route::get('/add/Product','ProductController@add');
 Route::post('/add/Product','ProductController@store')->name('productStore');
 
 Route::get('/add/categoryprod','ProductController@addCategoryProd');
-Route::post('/add/categoryprod','ProductController@storeRecipe')->name('categoryProdStore');
+Route::post('/add/categoryprod','ProductController@storeCategoryProd')->name('categoryProdStore');
 
 Route::get('/recipe','RecipeController@recipe');
 Route::get('/add/recipe','RecipeController@add');
 Route::post('/add/recipe','RecipeController@store')->name('ricipeStore');
 
+Route::get('/add/categoryRecipe','RecipeController@addCategoryRecipe');
+Route::get('/add/categoryRecipe','RecipeController@storeCategoryRecipe')->name('categoryRecipeStore');
 
 
 Route::get('recipe/{id}','RecipeController@page');

@@ -7,7 +7,13 @@
                 </section>
             </a>
             <span class="add_">Добавить рецепт</span>
-
+        </section>
+        <section class="Poisk_recipe">
+            <a href="/add/categoryRecipe">
+                <section class="add_images">
+                </section>
+            </a>
+            <span class="add_">Добавить категорию рецептов</span>
         </section>
     </section>
 @endsection

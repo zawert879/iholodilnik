@@ -26,7 +26,7 @@ class ProductController extends Controller
 //        dd($products);
         $products = DB::select("SELECT products.id AS product_id,products.name,products.photo,category_prods.name AS category_name FROM products,category_prods WHERE products.id_category_prod=category_prods.id");
 //        dump($products);
-        return view(    'basket')->with(['products'=>$products]);
+        return view(         'basket')->with(['products'=>$products]);
     }
 
     public function store(Request $request){
@@ -69,11 +69,11 @@ class ProductController extends Controller
 
     }
 
-    public function storeRecipe(Request $request){
+    public function storeCategoryProd(Request $request){
         $data = $request->all();
-        $products = new Category_prod;
-        $products->fill($data);
-        $products->save();
+        $category = new Category_prod;
+        $category->fill($data);
+        $category->save();
         return redirect('/basket');
     }
 }

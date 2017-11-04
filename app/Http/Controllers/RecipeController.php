@@ -24,6 +24,19 @@ class RecipeController extends Controller
         $products=Product::select(['id','name'])->get();
         return view('addRecipe')->with(['category_recipes'=>$category_recipes,'category_prods'=>$category_prods,'products'=>$products]);
     }
+
+    public function addCategoryRecipe(){
+        return view('addCategoryRecipe');
+    }
+
+    public function storeCategoryRecipe(Request $request){
+        $data = $request->all();
+        $category = new Category_recipe;
+        $category->fill($data);
+        $category->save();
+        return redirect('/recipe');
+    }
+
     public function store(Request $request){
         $recipe = new Recipe;
         $recipe->name = $request->name;

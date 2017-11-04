@@ -13,7 +13,7 @@
                 <section class="add_images">
                 </section>
             </a>
-            <span class="add_">Добавить рецепт</span>
+            <span class="add_">Добавить категорию продуктов</span>
         </section>
     </section>
 @endsection
