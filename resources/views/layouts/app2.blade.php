@@ -9,16 +9,14 @@
 </head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script>
-    $('form input[type=file]').change(function() {
 
-
-        var input = $('form input[type=file]')[0];
+    function changefile(input) {
         if(input.files[0].size>  5000000){
             alert('Максимальный вес файла - 5мб');
+
             return false;
-        }
-        return true;
-    });
+
+    }}
 </script>
 <script>
     $(document).ready(function(){

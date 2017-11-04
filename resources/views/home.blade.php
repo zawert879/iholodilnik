@@ -12,7 +12,7 @@
                     <img src="/uploads/avatars/{{Auth::user()->photo}}" width="150" alt="">
 
                     <form enctype="multipart/form-data" accept="image/*" action="{{Route('userPhoto')}}" method="post">
-                        <input type="file" name="photo">
+                        <input type="file" name="photo" onchange="changefile(this)">
                         <input type="submit" value="Отправить">
                         {!! csrf_field() !!}
                     </form>
