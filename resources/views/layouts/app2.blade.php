@@ -7,7 +7,21 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}" >
     <link rel="shortcut icon" href=" {{asset('css/images/low.png')}} " type="image/png">
 </head>
-<script src="http://code.jquery.com/jquery-2.0.2.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+    $('form input[type=file]').change(function() {
+        if ($('form input[type=file]').val() != '') {
+
+            var input = $('form input[type=file]')[0];
+            if(input.files[0].size>  5000000){
+                alert('Максимальный вес файла - 5мб');
+                return false;
+            }
+            return true;
+        }
+
+    });
+</script>
 <script>
     $(document).ready(function(){
         PopUpHide();
