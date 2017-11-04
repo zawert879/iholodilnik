@@ -16,7 +16,7 @@
                 </section>
                 <section class="line_recipe"></section>
                 <section class="Name_recipe">
-                    <p class="zag">Куриные крылышки запеченые</p>
+                    <p class="zag">dsghfshd крылышки запеченые</p>
                 </section>
             </figure>
             <figure class="block">
