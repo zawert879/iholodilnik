@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Composition;
 use App\Recipe;
+use App\Chapter;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use function MongoDB\BSON\toJSON;
 
 class ApiController extends Controller
 {
@@ -12,7 +16,9 @@ class ApiController extends Controller
     }
 
     public function recipes(){
-        return Recipe::all();
+        $recipe = Recipe::with('chapters')->with('compositions')->get();
+
+        return $recipe;
     }
 
     public function recipe($id){

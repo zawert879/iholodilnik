@@ -3,21 +3,29 @@
 <div class="container">
     <div class="row">
         <div class="col-mg-12">
-        <h1>{{$recipe->name}}</h1>
-            @foreach($products as $prod)
-                <label >{{$prod->name}}</label>
-            @endforeach
-
-
-            <?php
-            $result = explode("\r\n", $recipe->text);
-//            dd($result);
-            ?>
-            <p>
-                @foreach($result as $item)
-                    {{$item}} <br>
+            <h1>{{$recipe->name}}</h1>
+            <div class="col-mg-12">
+                @foreach($composition as $item)
+                    <p>
+                        {{$item->id_product}}
+                    </p>
                 @endforeach
-            </p>
+            </div>
+            <div class="col-mg-12">
+                @foreach($charters as $item)
+                    <p>
+                        <img src="/uploads/recipes/{{$item->photo}}" alt="">
+                        {{$item->text}}
+
+                    </p>
+                    @endforeach
+            </div>
+
+
+{{--            @foreach($products as $prod)--}}
+{{--                <label >{{$prod->name}}</label>--}}
+            {{--@endforeach--}}
+
 
         </div>
     </div>

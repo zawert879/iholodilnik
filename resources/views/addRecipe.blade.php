@@ -1,14 +1,13 @@
 @extends('layouts.app2')
 <script>
     function clone() {
-        var eeq = $("#amount").val();
-        eeq++;
-        $("#amount").val(eeq);
-
         $("#cloneform").clone().removeAttr('hidden').appendTo("#cloneto");
-        $("#cloneform").find('.selectmyitem').attr('name','item'+eeq);
-        $("#cloneform").find('.selectmyamount').attr('name','itemAmount'+eeq);
 
+    }
+    function clone2() {
+        $("#cloneform2").clone().removeAttr('hidden').appendTo("#cloneto2");
+//        $("#cloneform2").find('.selectmyitem').attr('name','item[]');
+//        $("#cloneform2").find('.selectmyamount').attr('name','itemAmount[]');
     }
 
 
@@ -56,12 +55,17 @@
                                     <textarea name="description" class="form-control"  rows="5"></textarea>
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <label class="col-md-2 control-label">Готовка</label>
 
-                                <div class="col-md-10">
-                                    <textarea name="text" class="form-control"  rows="10"></textarea>
+
+                            <div class="form-group">
+                                <div class="col-md-8 col-md-offset-4">
+                                    <label class="col-md-4 control-label">Этап готовки</label>
+                                    <button onclick="clone2()" type="button" class="btn btn-success">
+                                        +
+                                    </button>
                                 </div>
+                            </div>
+                            <div id="cloneto2">
                             </div>
                             <div class="form-group">
                                 <div class="col-md-8 col-md-offset-4">
@@ -73,27 +77,7 @@
                             </div>
                             <div id="cloneto">
                             </div>
-                            <div id="cloneform" class="form-group" hidden="hidden">
-                                <div class="col-md-4">
-                                    <select class="form-control">
-                                        @foreach($category_prods as $item)
-                                            <option value="{{$item->id}}">{{$item->name}}</option>
-                                        @endforeach
-                                    </select>
-                                </div>
-                                <div class="col-md-4">
-                                    <select class="form-control selectmyitem">
 
-                                        @foreach($products as $item)
-                                            <option value="{{$item->id}}">{{$item->name}}</option>
-                                        @endforeach
-
-                                    </select>
-                                </div>
-                                <div class="col-md-4">
-                                    <input type="text" class="form-control selectmyamount" >
-                                </div>
-                            </div>
                             <div class="form-group">
                                 <div class="col-md-8 col-md-offset-4">
                                     <button type="submit" class="btn btn-success">
@@ -101,12 +85,45 @@
                                     </button>
                                 </div>
                             </div>
-
-                            <input type="hidden" id="amount" name="amount" value="0">
                         </form>
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+
+    <div id="cloneform" class="form-group" hidden="hidden">
+        <div class="col-md-4">
+            <select class="form-control">
+                @foreach($category_prods as $item)
+                    <option value="{{$item->id}}">{{$item->name}}</option>
+                @endforeach
+            </select>
+        </div>
+        <div class="col-md-4">
+            <select class="form-control" name="item[]">
+                @foreach($products as $item)
+                    <option value="{{$item->id}}">{{$item->name}}</option>
+                @endforeach
+            </select>
+        </div>
+        <div class="col-md-4">
+            <input type="text" class="form-control" name="itemAmount[]" >
+        </div>
+    </div>
+
+    <div class="form-group" id="cloneform2" hidden="hidden">
+        <label class="col-md-2 control-label">Готовка</label>
+        <div class="col-md-10">
+            <input type="text" name="charter_text[]" class="form-control">
+        </div>
+        <label class="col-md-2 control-label">фото</label>
+        <div class="col-md-10">
+            <input type="file" class="form-control" name="charter_photo[]">
+        </div>
+        <label class="col-md-2 control-label">таймер</label>
+        <div class="col-md-10">
+            <input type="time" class="form-control" name="charter_timer[]">
         </div>
     </div>
 
