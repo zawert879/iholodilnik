@@ -1,0 +1,32 @@
+@font-face {
+	font-family: 'PTSansRegular';
+	src: url('fonts/PTS55F_W.ttf') format('TrueType');   
+} 
+@font-face {
+	font-family: 'Exo2';
+	src: url('fonts/exo2mediumcondensed.ttf') format('TrueType');   
+} 
+@font-face {
+	font-family: 'Helvetica';
+	src: url('fonts/HelveticaBold.ttf') format('TrueType');   
+} 
+@font-face {
+	font-family: 'BaronNeueBlack';
+	src: url('fonts/baronneueblack.ttf') format('TrueType');   
+} 
+@font-face {
+    font-family: 'BaronNeue';
+    src: url('fonts/baronneue.ttf') format('TrueType');
+}
+@font-face {
+	font-family: 'PTSansRegular';
+	src: url('fonts/PTS55F_W.ttf') format('TrueType');   
+}
+@font-face {
+	font-family: 'Raleway-Bold';
+	src: url('fonts/Raleway-Bold.ttf') format('TrueType');   
+}
+@font-face {
+	font-family: 'Raleway-Black';
+	src: url('fonts/Raleway-Black.ttf') format('TrueType');   
+}

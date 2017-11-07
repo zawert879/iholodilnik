@@ -1,0 +1,232 @@
+html, body, #page-one, #page-two, {
+  height:100%;
+ 
+}
+
+
+
+#mainNav {
+
+  color: #ddd;
+ 
+  padding:0 1em;
+  position:fixed; 
+  top: 0em; 
+  width:100%; 
+}
+
+
+
+
+h2 {font-size:3em; padding-top:1em; text-align:center;}
+
+#page-one {
+  
+/*
+  background: #313236 url(../Roststal/images/fon.svg) no-repeat center;
+  background-size: cover;*/
+}
+
+.Slid{
+ z-index: 1;
+ position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-end;
+    height: 100%;
+
+}
+.Sl{
+
+   background:  url(../Roststal/images/Slide.svg) no-repeat center;
+   animation: hover 2s infinite ease;
+  width: 80px;
+  height:80px;
+  margin-bottom: 50px; 
+ 
+}
+.Kwhite{
+   background:  url(../Roststal/images/KWhite.svg) no-repeat center;
+   
+  width: 25px;
+  height: 25px;
+  padding-top: 20px;
+}
+
+@keyframes hover{
+0% {
+  margin-bottom: 7%;
+}
+
+50% {
+   margin-bottom: 5%;
+}
+
+100% {
+   margin-bottom: 7%;
+}
+}
+.Welcom{
+
+ 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+  font: bold 45px/45px Exo2, ArialBlack, sans-serif;
+  text-transform: uppercase;
+  color: #000;
+  text-align: center;
+}
+.Wel{
+   z-index: 2;
+  position: absolute;
+margin-top: 20%;
+}
+
+
+
+
+
+
+
+.NewMenuBlock{
+  margin-top: 100px;
+  background: #dfdfcd;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: stretch;
+  max-height: 200px;
+  
+  
+
+}
+.NewblockText{
+  z-index: 10;
+  text-align: center;
+  font: bold 45px/45px Exo2, ArialBlack, sans-serif;
+  color: #fff;
+  text-transform: uppercase;
+    position: absolute;
+    top: 35%;
+    width: 100%;
+   
+    
+  
+}
+
+.NewblockImages{
+padding: 0;
+    margin: auto;
+    width: 100%;
+    object-fit: cover;
+    max-height: 100px;
+    min-height: 200px;
+    min-width: 400px;
+    max-width: 900px;
+}
+
+
+
+.NewblockMenu{
+      width: 100%;
+    background: #ffffff;
+    min-width: 400px;
+    max-width: 900px;
+}
+
+.ColorBlocks{
+  margin: 100px 0 100px 0;
+  display: flex;
+  flex-direction: row;
+
+}
+.BlockColor{
+  width: 25%;
+  height: 250px;
+}
+.BlockOne{
+  position: relative;
+  background:#91B496 ;
+}
+.ClockColorText{
+  position: absolute;
+  font: bold 45px/45px Exo2, ArialBlack, sans-serif;
+  color: #fff;
+  text-transform: uppercase;
+  text-align: center;
+  width: 100%;
+  top: 35%;
+}
+
+.BlockColorImages{
+  clip-path: circle(40% at 50% 50%);
+ 
+  width: 100%;
+  object-fit: cover;
+  max-height: 200px;
+  min-height: 50px;
+  min-width: 50px;
+  max-width: 200px;
+}
+.BlockDColor{
+  display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.BloksColorText{
+
+    text-align: center;
+    font: bold 16px/16px Exo2, ArialBlack, sans-serif;
+    color: #2d2929;
+    text-transform: uppercase;
+    position: absolute;
+    bottom: 45px;
+    width: 100%;
+}
+.BloksColorTextNumber{
+  text-align: center;
+    font: bold 18px/18px BaronNeue, ArialBlack, sans-serif;
+    color: #2d2929;
+    text-transform: uppercase;
+    position: absolute;
+    bottom: 15px;
+    width: 100%;
+}
+.BlockTwo{
+  position: relative;
+  background:#FDE3A7;
+ 
+}
+.BlockThree{
+  position: relative;
+  background:#FABE58 ;
+  
+}
+.BlockFour{
+  position: relative;
+  background:#beccb6;
+  color: #2d2929;
+
+}
+.BlockFive{
+  position: relative;
+  background:#F1A9A0;
+  
+}
+.BlockSix{
+  position: relative;
+  background:#D2D7D3 ;
+}
+.BlockSeven{
+  position: relative;
+  background:#67809F ;
+}
+.BlockEight{
+  position: relative;
+  background:#e2e5b1 ;
+}
+

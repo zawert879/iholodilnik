@@ -8,14 +8,17 @@
                 <div class="panel-heading">Профиль</div>
 
                 <div class="panel-body">
-                    <h1>{{Auth::user()->name}}</h1>
-                    <img src="/uploads/avatars/{{Auth::user()->photo}}" width="150" alt="">
-
-                    <form enctype="multipart/form-data" accept="image/*" action="{{Route('userPhoto')}}" method="post">
-                        <input type="file" name="photo" onchange="changefile(this)">
-                        <input type="submit" value="Отправить">
+                    <section class="ProfImage">
+                    <p>{{Auth::user()->name}}</p>
+                    <img class="RadiusImage" src="/uploads/avatars/{{Auth::user()->photo}}" width="150" alt="">
+                    </section>
+                    
+                    <form class="ProfButton" enctype="multipart/form-data" accept="image/*" action="{{Route('userPhoto')}}" method="post">
+                        <input class="btn" type="file" name="photo" onchange="changefile(this)">
+                        <input class="btn ButtonSize" type="submit" value="Отправить">
                         {!! csrf_field() !!}
                     </form>
+                    
                 </div>
             </div>
         </div>

@@ -4,10 +4,10 @@ html, #page-one, #page-two, #page-three, #page-four{
 }
 
 body{
-	/*background: #f2f1ed url(../Roststal/images/texture-light.png);
+	/*background: #f2f1ed url(images/texture-light.png);
     background-size: 29.75em;*/
 	height: 100%;
-	background: #efeeeb;
+	background: #eff0e5;
 
 	
    /* background: #f2f2f2;*/
@@ -41,47 +41,50 @@ h1{
 	font-family: PTSansRegular;	
 }
 
-a, a:hover {text-decoration: none;}
-a,a:link{
-	color: #e0e0ee;
+a:hover {color:#afb198; }
+a{text-decoration: none;
+	color: #fff;
+}
+a:link {
+	color: #ec005e;
+}
+input{
+	border: none;
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.5em;
+    padding: 0;
+    
+    /*width: 15px;
+    height: 12px;*/
 }
 
-@font-face {
-	font-family: 'PTSansRegular';
-	src: url('fonts/PTS55F_W.ttf') format('TrueType');   
-} 
-@font-face {
-	font-family: 'Exo2';
-	src: url('fonts/exo2mediumcondensed.ttf') format('TrueType');   
-} 
-@font-face {
-	font-family: 'Helvetica';
-	src: url('fonts/HelveticaBold.ttf') format('TrueType');   
-} 
-@font-face {
-	font-family: 'BaronNeueBlack';
-	src: url('fonts/baronneueblack.ttf') format('TrueType');   
-} 
-@font-face {
-    font-family: 'BaronNeue';
-    src: url('fonts/baronneue.ttf') format('TrueType');
+
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 900px){
+.Raz{
+font: 	bold 28px/10px Exo2, ArialBlack, sans-serif;
+    text-transform: uppercase;
 }
-@font-face {
-	font-family: 'PTSansRegular';
-	src: url('fonts/PTS55F_W.ttf') format('TrueType');   
-} 
-/*@media (max-width: 1280px) {
-	.user_bar_text {font-size: 0;}
+
+
+}
+/*@media (max-width: 800px) {
+  .Newblock {
+    min-width: 400px;
+    max-width:400px;}
 }*/
-
+.ND{
+	background: #dedecd;
+	height: 100px;
+}
 
 .left{float: left;}
 
 .right{float: right;}
 
 .container{
-    background: #f1f4ee;
-	max-width: 1700px;
+    
 	margin: 0 auto;
 }
 
@@ -93,13 +96,13 @@ a,a:link{
 	padding-left: 30px;
 	background: #ff6c5c;
 	float: left; 
-
-	border-bottom : 1px solid #ebf31b;
+	font-size: 
+	border-bottom: 1px solid #ebf31b;
 }
 
 
 .menu{
-	background-image: url('images/MenuWhite.svg');
+	background-image: url(images/MenuWhite.svg);
 	background-repeat: no-repeat;
 	background-position: left; 
 	width: 32px;
@@ -107,11 +110,11 @@ a,a:link{
 }
 
 .menu_block{
-	padding: 20px 40px 20px 40px;
+	margin: 20px 40px 20px 40px;
 }
 .Poisk{
 	padding-right: 40px; 
-	background-image: url('images/Poisk.png');
+	background-image: url(images/Poisk.png);
 	background-repeat: no-repeat;
 	background-position: left; 
 	width: 25px;
@@ -119,8 +122,8 @@ a,a:link{
 }
 .header{
 	
-	height: 570px;
-	background: #fff url('images/fon1.png') no-repeat center;
+	height: 500px;
+	background: #fff url(images/fon1.png) no-repeat center;
 	background-size: cover;
 }
 
@@ -179,8 +182,49 @@ nav{
 	
 
 }
+.form-control{
+	background-color: #dedecd;
+    border-radius: 0px 3px 3px 0px;
+    -moz-border-radius: 0px 3px 3px 0px;
+    -webkit-border-radius: 0px 3px 3px 0px;
+    color: #606468;
+    margin-bottom: 1em;
+    padding: 0 16px;
+    width: 200px;
+    height: 50px;
+}
+.Zn{
+
+	height: 50px;
+	width: 50px;
+	background-color: #c7c7b5;
+	
+}
+.Zn_imagesEmail{
+	width: 30px;
+	height: 30px;
+	background-image: url(images/Profile1.svg);
+	background-repeat: no-repeat;
+	background-position: center; 
+	margin:10px;
+
+}
+.Zn_imagesKey{
+	width: 30px;
+	height: 30px;
+	background-image: url(images/Key.svg);
+	background-repeat: no-repeat;
+	background-position: center; 
+	margin:10px;
+
+}
+.col-md-6{
+	display: flex;
+	flex-direction: row;
+}
 
 .FotoProf{
+clip-path: circle(40% at 50% 50%);
 padding: 0;
 margin: auto;
 width: 100%;
@@ -189,7 +233,6 @@ max-height: 200px;
 min-height: 200px;
 min-width: 200px;
 max-width: 200px;
-	border-radius: 50%;
 }
 .Priv{
 	height: 100%;
@@ -241,7 +284,7 @@ max-width: 200px;
 }
 .b-popup-content{
 	
-	background: #f1f4ee;
+	background: #dedecd;
 	    text-align: right;
 	   padding-top: 10px;
 
@@ -256,7 +299,7 @@ max-width: 200px;
 	padding:  10px 20px 0  20px;
 
 }
-.D_recipe{
+co_recipe{
 	display: flex;
 	justify-content: flex-end;
 
@@ -265,18 +308,18 @@ max-width: 200px;
 	display: flex;
 	flex-direction: column;
     justify-content: flex-start;
-   background: #f1f4ee ;
+   background: #dedecd;
     background-size: cover;
 }
 .Foto_profile{
-
+	
 	
 	width: 200px;
 	height: 200px;
-	margin: 20px 0 0 30px;
+	margin: auto;
 }
 .Profile_block{
-	width: 260px;
+	
 	height: 270px;
 }
 .Text_profile{
@@ -310,12 +353,12 @@ max-width: 200px;
 }
 .add_{
 	
-	font: 15px/15px PTSansBlod, Arial, sans-serif;
-	color: #000;
+	font: 15px/15px Exo2, Arial, sans-serif;
+	color: #fff;
 	padding: 9px 0 0 10px;
 }
 .add_images{
-	background-image: url('images/Add.svg');
+	background-image: url(images/AddWhite.svg);
 	background-repeat: no-repeat;
 	background-position: center; 
 	width: 32px;
@@ -356,7 +399,7 @@ padding: 0 20px 0 20px;
 
 }
 .Bookmarks{
-	background-image: url('images/Bookmarks.svg');
+	background-image: url(images/Bookmarks.svg);
 	background-repeat: no-repeat;
 	background-position: center; 
 	width: 32px;
@@ -380,10 +423,15 @@ margin: auto;
 width: 100%;
 object-fit: cover;
 max-height: 300px;
-    min-height: 300px;
-    min-width: 200px;
+    min-height: 50px;
+    min-width: 50px;
     max-width: 500px;
 
+}
+.SpisokRecepie{
+	margin-top: 100px;
+	max-width: 750px;
+	margin: auto;
 }
 .Newblock_images{
 padding: 0;
@@ -411,14 +459,32 @@ border: 1px solid #fff;
 text-transform: uppercase;
 
 }
+.ProfImage{
+	margin: 10px;
+	text-align: center;
+	font: 20px/20px Exo2, Arial, sans-serif;
+}
+.ProfButton{
+	display: flex;
+	flex-direction: column;
+	justify-content: center; 
+}
+.RadiusImage{
+	/*clip-path: circle(40% at 50% 50%);*/
+}
+.panel-body{
+	/*display: flex;
+	flex-direction: column;
+	justify-content: center;
+	width: 350px;
+    height: 400px;*/
+    margin-top: 20px;
+   /* background: #dedecd;
+    border-radius: 5px;*/
+}
 .D{
-	
- 
-  
-   
-    
-   
-    background-color: #003366;
+
+    background-color: #fff;
 	font: normal 12px  Arial, sans-serif;
     color: #fff; 
 }
@@ -427,15 +493,113 @@ text-transform: uppercase;
 	flex-direction:row;
 	justify-content:flex-start;
 	background: #fff;
+	max-height: 300px;
+    min-height: 300px;
+    min-width: 200px;
 	
    
     height: 210px;
 
 }
+.btn {
+  margin: auto;
+  font-weight: 700;
+  color: white;
+ 
+  padding: .8em 1em calc(.8em + 3px);
+  border: 0;
+  border-radius: 3px;
+  background: rgb(64,199,129);
+  box-shadow: 0 -3px rgb(53,167,110) inset;
+  transition: 0.2s;
+} 
+
+.btn:hover { background: rgb(53, 167, 110); }
+
+.btn:active {
+  background: rgb(33,147,90);
+  box-shadow: 0 3px rgb(33,147,90) inset;
+}
+.btn-primary{
+	width: 250px;
+}
+.panel-heading{
+	padding-top: 10px;
+	margin: auto;
+	text-align: center;
+	
+	font:  14px/14px  Exo2, Arial, sans-serif;
+}
+.ButtonProf{
+	margin: auto;
+	font-weight: 700;
+  color: white;
+ 
+  padding: .8em 1em calc(.8em + 3px);
+  border: 0;
+  border-radius: 3px;
+  background: rgb(64,199,129);
+  box-shadow: 0 -3px rgb(53,167,110) inset;
+  transition: 0.2s;
+}
+.ButtonSize{
+	
+	
+	margin-top: 10px;
+	width: 150px;
+}
+.Pass{
+	margin-bottom: 5px; 
+	font:  14px/14px  Exo2, Arial, sans-serif;
+	color: #000;
+	display: flex;
+	flex-direction: row;
+}
+.PassText{
+	padding-left: 10px;
+	font:  14px/14px  Arial, sans-serif;
+	color: #606468;
+}
+.BlockRegister{
+	margin: auto;
+	text-align: center;
+	font:  14px/14px Exo2, Arial, sans-serif;
+
+}
+.VhodBlock{
+	background-image: url(images/Vhod.svg);
+	background-repeat: no-repeat;
+	background-position: left; 
+	width: 32px;
+	height: 32px;
+	margin: 0 10px 0 10px;
+}
+.BlockPanel{
+	width: 300px;
+	height: 300px;
+}
+.checkbox{
+	
+	font:  14px/14px Exo2, Arial, sans-serif;
+	padding-bottom: 10px;
+	
+
+}
+
+.control-label{
+	font:  14px/14px Exo2, Arial, sans-serif;
+	
+}
+.panel-default{
+	margin-bottom: 20px;
+}
+.btn-success{
+	margin: 20px;
+}
 .D_zag{
 	text-align: right;
 	text-transform: uppercase;
-	font:  14px  PTSansblod;
+	font:  14px/14px  Exo2, Arial, sans-serif;
 	padding: 20px;
 }
 .Bookmarks_{
@@ -449,7 +613,7 @@ text-transform: uppercase;
 	padding: 9px 0 0 10px;
 }
 .Search{
-	background-image: url('images/Search.svg');
+	background-image: url(images/Search.svg);
 	background-repeat: no-repeat;
 	background-position: left; 
 	width: 32px;
@@ -457,7 +621,7 @@ text-transform: uppercase;
 	margin: 0 10px 0 10px;
 }
 .Profile{
-	background-image: url('images/Profile.svg');
+	background-image: url(images/Profile.svg);
 	background-repeat: no-repeat;
 	background-position: left; 
 	width: 32px;
@@ -466,7 +630,7 @@ text-transform: uppercase;
 }
 
 .Black_cpisok{
-	background-image: url('images/Black.svg');
+	background-image: url(images/Black.svg);
 	background-repeat: no-repeat;
 	background-position: left; 
 	width: 32px;
@@ -474,12 +638,27 @@ text-transform: uppercase;
 	margin: 0 10px 0 10px;
 }
 .Ifrukt_cpisok{
-	background-image: url('images/Ifrukt.svg');
+	background-image: url(images/Ifrukt.svg);
 	background-repeat: no-repeat;
 	background-position: left; 
 	width: 32px;
 	height: 32px;
 	margin: 0 10px 0 10px;
+}
+.Vihod_cpisok{
+	background-image: url(images/Vihod.svg);
+	background-repeat: no-repeat;
+	background-position: left; 
+	width: 32px;
+	height: 32px;
+	margin: 0 10px 0 10px;
+}
+.ListRecipe{
+	background-image: url(images/SlideWhite.svg);
+	background-repeat: no-repeat;
+	background-position: left; 
+	width: 10px;
+	height: 10px;
 }
 .Menu_recipe{
 text-transform: uppercase;
@@ -497,6 +676,7 @@ text-transform: uppercase;
 	display: flex;
 	flex-direction:row;
 	justify-content:space-between;
+	margin: 350px 9% 0 9%;
 }
 .Name_recipe{
 
@@ -507,6 +687,13 @@ text-transform: uppercase;
 	padding: 40px;
 
     
+}
+.row{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
 }
 .line_recipe{
 	
@@ -533,9 +720,9 @@ text-transform: uppercase;
 	
 	z-index: 1;
    /* background: #fff;*/
-	margin-top: 20px;
+	
     
-    margin: 20px;
+    margin: 5px 5px 10px 5px;
 }
 .Newblock{
 	
@@ -544,6 +731,27 @@ text-transform: uppercase;
     
     
 
+}
+.RecipesWeeks{
+	
+	margin-bottom: 30px;
+	padding: 10px;
+	text-align: center;
+	  border-top: 1px solid #FFFFFF;
+    border-bottom: 1px solid #FFFFFF;
+}
+.RecipesWeeksZag{
+	
+    margin: 20px;
+	font:  24px/24px Arial;
+	
+   color: #afb198;
+	text-transform: uppercase;
+}
+.RecipesWeeksKZag{
+	 color: #afb198;
+	 margin: 20px;
+	font:  10px/10px Arial;
 }
 .block_horizont{
    
@@ -590,7 +798,7 @@ text-transform: uppercase;
 	flex-direction: row;
 	justify-content: space-around;
 	align-items: stretch;
-	margin-top: 50px;
+	
 	
 	
 
@@ -601,8 +809,8 @@ text-transform: uppercase;
 	justify-content: center;
 	align-items: stretch;
 	
-	margin-top: 50px;
-	padding-top: 20px;
+	margin: 100px 0 100px 0;
+	
 }
 .Newblock_text{
 	z-index: 10;
@@ -620,7 +828,4 @@ text-transform: uppercase;
 .Newblock_menu{
 	width: 100px;
 	background: #988345;
-}
-.visible_form{
-	visibility: hidden;
 }

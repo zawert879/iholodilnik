@@ -4,8 +4,10 @@
     <meta http-equiv="Content-Type" content="text/html" charset="utf-8">
     <title>iхолодильник</title>
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/styl.css') }}" >
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/Fonts.css') }}" >
     <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}" >
-    <link rel="shortcut icon" href=" {{asset('css/images/low.png')}} " type="image/png">
+    <link rel="shortcut icon" href=" {{asset('css/images/HolodRed.svg')}} " type="image/svg">
 </head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script>
@@ -35,11 +37,13 @@
 
             var child = ee.childNodes[1];
             if(child.value=='0'){
-                ee.style.background='#61ff6a';
+                ee.style.background='#41c781';
+                ee.style.color='#fff'
                 child.value='1'
             }else {
                 child.value='0';
                 ee.style.background='#fff';
+                ee.style.color='#000'
             }
         }
     </script>
@@ -61,13 +65,14 @@
 
                 <a href="javascript:PopUpShow()" class="menu"></a>
                 @else
-                    <a href="/login" >Войти </a>
-                    <a href="/register">Регистрация</a>
+                    <a href="/login" class=" VhodBlock"></a>
+                  
                     @endauth
         </nav>
     </section>
     @yield('header')
 </header>
+ <section class="ND"></section>
 <body>
     @yield('content')
         @auth()
@@ -112,7 +117,7 @@
                 </section>
 
                 <section class="Menu_blocks">
-                    <div class="Ifrukt_cpisok"></div>
+                    <div class="Vihod_cpisok"></div>
                     <a class="user_bar_text" href="{{ route('logout') }}"
                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
