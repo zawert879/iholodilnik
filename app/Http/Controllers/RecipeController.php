@@ -105,14 +105,14 @@ class RecipeController extends Controller
     }
 
     public function page($id){
-        $recipe = Recipe::where('id',$id)->first();
-        $composition = Composition::where('id_recipe',$id)->get();
-        $charters = Chapter::where('id_recipe',$id)->get();
+//        $recipe = Recipe::where('id',$id)->with('charters')->with('compositions')->get();
 
-//        dump($recipe);
+        $recipe = Recipe::where('id',$id)
+            ->with('chapters')
+            ->with('compositions')
+            ->first();
 
-//        dump($charters);
 //        $products = DB::select("select products.name FROM products,compositions,recipes WHERE products.id = compositions.Id_product AND compositions.id_recipe=".$id." AND recipes.id = compositions.id_recipe");
-        return view('page')->with(['recipe'=>$recipe,'composition'=>$composition,'charters'=>$charters]);
+        return view('page')->with(['recipe'=>$recipe,'products' => $recipe->first()->compositions,'chapters' => $recipe->first()->chapters]);
     }
 }

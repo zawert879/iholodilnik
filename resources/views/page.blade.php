@@ -5,14 +5,14 @@
         <div class="col-mg-12">
             <h1>{{$recipe->name}}</h1>
             <div class="col-mg-12">
-                @foreach($composition as $item)
+                @foreach($products as $item)
                     <p>
-                        {{$item->id_product}}
+                        {{$item->name}}
                     </p>
                 @endforeach
             </div>
             <div class="col-mg-12">
-                @foreach($charters as $item)
+                @foreach($chapters as $item)
                     <p>
                         <img src="/uploads/recipes/{{$item->photo}}" alt="">
                         {{$item->text}}
@@ -21,10 +21,6 @@
                     @endforeach
             </div>
 
-
-{{--            @foreach($products as $prod)--}}
-{{--                <label >{{$prod->name}}</label>--}}
-            {{--@endforeach--}}
 
 
         </div>

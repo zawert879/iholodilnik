@@ -16,7 +16,9 @@ class ApiController extends Controller
     }
 
     public function recipes(){
-        $recipe = Recipe::with('chapters')->with('compositions')->get();
+        $recipe = Recipe::with('chapters')
+            ->with('compositions')
+            ->get();
 
         return $recipe;
     }
