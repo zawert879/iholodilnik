@@ -24,7 +24,9 @@ class ApiController extends Controller
     }
 
     public function recipe($id){
-        return Recipe::find($id);
+        return Recipe::where('id',$id)->with('chapters')
+            ->with('compositions')
+            ->get();
     }
 
 }
