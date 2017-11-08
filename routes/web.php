@@ -11,6 +11,8 @@
 |
 */
 
+use App\Recipe;
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -44,3 +46,15 @@ Route::get('/basket','ProductController@basket');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+
+
+Route::get('/mobile/{id}',function($id){
+    $recipe = Recipe::where('id',$id)
+        ->with('chapters')
+        ->with('compositions')
+        ->first();
+
+    return view('mobile')->with(['recipe'=>$recipe,'products' => $recipe->first()->compositions,'chapters' => $recipe->first()->chapters]);
+});
