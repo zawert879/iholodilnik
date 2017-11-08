@@ -19,10 +19,14 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::get('/','ApiController@index');
 
-Route::post('register', 'Auth\RegisterController@register');
-Route::post('login', 'Auth\LoginController@login');
+//Route::post('register', 'Auth\RegisterController@register');
+//Route::post('login', 'Auth\LoginController@login');
 
 //Route::get('/api/users/{id}',);
 //Route::get('/api/users/',);
 Route::get('recipes/','ApiController@recipes');
 Route::get('recipe/{id}','ApiController@recipe');
+Route::get('products/','ApiController@products');
+Route::get('product/{id}','ApiController@product');
+Route::get('category/prods','ApiController@category_prods');
+Route::get('category/prod/{id}','ApiController@category_prod');
